@@ -16,6 +16,7 @@
     "fs": "^0.0.1-security",
     "mime-db": "^1.46.0",
     "mime-types": "^2.1.29",
+    "minecraft-server-util": "^3.5.2",
     "ms": "^2.1.2",
     "node-fetch": "^2.6.1",
     "opusscript": "^0.0.8",
