@@ -12,7 +12,7 @@
     "discord.js": "^12.5.3",
     "dotenv": "^10.0.0",
     "event-target-shim": "^5.0.1",
-    "ffmpeg-static": "^4.3.0",
+    "ffmpeg-static": "^4.4.0",
     "fs": "^0.0.1-security",
     "mime-db": "^1.46.0",
     "mime-types": "^2.1.29",
@@ -24,7 +24,8 @@
     "setimmediate": "^1.0.5",
     "tweetnacl": "^1.0.3",
     "ws": "^7.4.4",
-    "ytdl-core": "^4.8.0"
+    "yt-search": "^2.10.0",
+    "ytdl-core": "^4.9.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

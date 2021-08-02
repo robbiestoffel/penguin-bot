@@ -1,7 +1,7 @@
 const cooldowns = new Map();
 
 module.exports = (Discord, client, message) => {
-    const prefix = 'penguin ';
+    const prefix = '$';
     if(!message.content.startsWith(prefix) || message.author.bot) return;
     
     const args = message.content.slice(prefix.length).split(/ +/);
@@ -13,10 +13,8 @@ module.exports = (Discord, client, message) => {
         cooldowns.set(command.name, new Discord.Collection());
     }
 
-
-
     try{
-        command.execute(client, message, cmd, args, Discord);
+        command.execute(message, args, cmd, client, Discord);
     } catch (err){
         message.reply("There was an error trying to execute this command!");
         console.log(err);

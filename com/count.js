@@ -1,7 +1,7 @@
 module.exports = {
     name: 'count',
     description: "Informs you of your number of penguins",
-    execute(client, message, args) {
+    execute(message, args, cmd, client, Discord) {
         const newEmbed = new Discord.MessageEmbed()
             .setColor('#304281')
             .setTitle('Rules')
