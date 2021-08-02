@@ -1,7 +1,7 @@
 const cooldowns = new Map();
 
 module.exports = (Discord, client, message) => {
-    const prefix = '$';
+    const prefix = 'penguin ';
     if(!message.content.startsWith(prefix) || message.author.bot) return;
     
     const args = message.content.slice(prefix.length).split(/ +/);
