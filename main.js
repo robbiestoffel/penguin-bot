@@ -8,7 +8,7 @@ client.events = new Discord.Collection();
 })
 
 require('dotenv').config();
-client.login(process.env.DISCORD_TOKEN);
+client.login(process.env.TEST_TOKEN);
 
 /*
 const fs = require('fs');
