@@ -1,3 +1,5 @@
+const pathToFfmpeg = require('ffmpeg-static');
+
 module.exports = {
     name: 'gakker',
     description: 'Makes penguin sounds',

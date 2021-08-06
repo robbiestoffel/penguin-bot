@@ -1,6 +1,7 @@
 const ms = require('ms');
 module.exports = {
     name: 'mute',
+    permissions: ["KICK_MEMBERS"],
     description: 'Mutes people on the server',
     execute(message, args, cmd, client, Discord) {
         if(message.member.roles.cache.has('844318850707488778')){

@@ -1,5 +1,6 @@
 const ytdl = require('ytdl-core');
 const ytSearch = require('yt-search');
+const pathToFfmpeg = require('ffmpeg-static');
 
 const queue = new Map();
 
