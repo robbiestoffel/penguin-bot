@@ -33,12 +33,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/robbiestoffel/wabster.git"
+    "url": "git+ssh://git@github.com/robbiestoffel/penguin-bot.git"
   },
   "author": "robster",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/robbiestoffel/wabster/issues"
+    "url": "https://github.com/robbiestoffel/penguin-bot/issues"
   },
-  "homepage": "https://gitlab.com/robbiestoffel/wabster#readme"
+  "homepage": "https://github.com/robbiestoffel/penguin-bot#readme"
 }
