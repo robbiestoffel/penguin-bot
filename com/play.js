@@ -8,6 +8,7 @@ module.exports = {
     name: 'play',
     aliases: ['skip', 'stop'],
     cooldown: 0,
+    permissions: [],
     description: 'Music Bot',
     async execute(message, args, cmd, client, Discord){
 

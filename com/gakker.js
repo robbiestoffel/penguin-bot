@@ -3,6 +3,7 @@ const pathToFfmpeg = require('ffmpeg-static');
 module.exports = {
     name: 'gakker',
     description: 'Makes penguin sounds',
+    permissions: [],
     execute(message, args, cmd, client, Discord) {
         function play(connection, message) {
             dispatcher = connection.play('./asset/snd/penguin.mp4');
