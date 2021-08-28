@@ -17,6 +17,7 @@
     "mime-db": "^1.46.0",
     "mime-types": "^2.1.29",
     "minecraft-server-util": "^3.5.2",
+    "mongoose": "^5.13.8",
     "ms": "^2.1.2",
     "node-fetch": "^2.6.1",
     "opusscript": "^0.0.8",
@@ -32,12 +33,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/robbiestoffel/wabster.git"
+    "url": "git+ssh://git@github.com/robbiestoffel/penguin-bot.git"
   },
   "author": "robster",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/robbiestoffel/wabster/issues"
+    "url": "https://github.com/robbiestoffel/penguin-bot/issues"
   },
-  "homepage": "https://gitlab.com/robbiestoffel/wabster#readme"
+  "homepage": "https://github.com/robbiestoffel/penguin-bot#readme"
 }

@@ -1,5 +1,6 @@
 const ytdl = require('ytdl-core');
 const ytSearch = require('yt-search');
+const pathToFfmpeg = require('ffmpeg-static');
 
 const queue = new Map();
 
@@ -7,6 +8,7 @@ module.exports = {
     name: 'play',
     aliases: ['skip', 'stop'],
     cooldown: 0,
+    permissions: [],
     description: 'Music Bot',
     async execute(message, args, cmd, client, Discord){
 
