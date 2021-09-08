@@ -6,21 +6,18 @@ const queue = new Map();
 
 module.exports = {
     name: 'play',
-    aliases: ['skip', 'stop'],
+    aliases: ['skip', 'stop', 'p'],
     cooldown: 0,
-    permissions: [],
+    permissions: ["CONNECT", "SPEAK"],
     description: 'Music Bot',
     async execute(message, args, cmd, client, Discord){
 
         const voice_channel = message.member.voice.channel;
-        if (!voice_channel) return message.channel.send('You need to be in a channel to execute this command!');
-        const permissions = voice_channel.permissionsFor(message.client.user);
-        if (!permissions.has('CONNECT')) return message.channel.send('You do not have the correct permissions');
-        if (!permissions.has('SPEAK')) return message.channel.send('You do not have the correct permissions');
+        if (!voice_channel) return message.channel.send('You need to be in a voice channel to execute this command!');
 
         const server_queue = queue.get(message.guild.id);
 
-        if (cmd === 'play'){
+        if (cmd === 'play' || cmd === 'p'){
             if (!args.length) return message.channel.send('You need to send the second argument!');
             let song = {};
 
@@ -37,7 +34,7 @@ module.exports = {
                 if (video){
                     song = { title: video.title, url: video.url }
                 } else {
-                    message.channel.send('Hmm... Something did not work. Could not find that video.');
+                    message.channel.send('Hmm... Something did not work. Couldn\'t find that video.');
                 }
             }
 

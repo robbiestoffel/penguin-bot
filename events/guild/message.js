@@ -74,7 +74,7 @@ module.exports = async (Discord, client, message) => {
             }
         }
         if(invalidPerms.length){
-            return message.channel.send(`You do not have the right permissions.`);
+            return message.channel.send(`You do not have the right permissions to run this command.`);
         }
     }
 
@@ -111,10 +111,10 @@ module.exports = async (Discord, client, message) => {
 
 // Random Messages
 const ranMessage = (message) => {
-    let ran = Math.floor(Math.random() * 30)
+    let ran = Math.floor(Math.random() * 40)
     if (ran === 0) {
         message.channel.send("GAKKER");
-    } else if (ran === 9) {
+    } else if (ran === 1) {
         message.channel.send("penguins are power");
     }
 }
