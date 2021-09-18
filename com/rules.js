@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'count',
+    name: 'rules',
     description: "Pastes in the Rules",
     aliases: [],
     permissions: [],

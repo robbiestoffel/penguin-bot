@@ -15,7 +15,7 @@ module.exports = {
             VIEW_CHANNEL: false
         });
         channel.updateOverwrite(message.author, {
-            SEND_MESSAGES: true,
+            SEND_MESSAGES: false,
             VIEW_CHANNEL: true
         });
 
@@ -23,10 +23,11 @@ module.exports = {
 
         try{
             
-            await reactionMessage.react(":watermelon:");
-            await reactionMessage.react(":eyes:");
+            await reactionMessage.react(":rock:");
+            await reactionMessage.react(":page_facing_up:");
+            await reactionMessage.react("scissors");
         }catch(err){
-            channel.send("Error...")
+            channel.send("There was an error finding the right emojis...")
             throw err;
         }
 
