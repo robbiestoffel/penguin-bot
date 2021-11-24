@@ -5,7 +5,7 @@ module.exports = {
     cooldowns: 10,
     description: 'Testing Threads',
     async execute(message, args, cmd, client, Discord) {
-        const thread = await channel.threads.create({
+        const thread = await message.channel.threads.create({
             name: 'rock-paper-scissors',
             autoArchiveDuration: 60,
             type: 'private_thread',
@@ -26,7 +26,7 @@ module.exports = {
         try{
             await reactionMessage.react(":rock:");
             await reactionMessage.react(":page_facing_up:");
-            await reactionMessage.react("scissors");
+            await reactionMessage.react(":scissors:");
         }catch(err){
             channel.send("There was an error finding the right emojis...")
             throw err;

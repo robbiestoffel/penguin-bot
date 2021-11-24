@@ -5,7 +5,7 @@ module.exports = {
     once: false,
     async execute(Discord, client, member) {
         console.log('guildMemberAdd')
-        guildMember.roles.add(guildMember.guild.roles.cache.find(role => role.name === '🐧'));
+        member.roles.add(member.guild.roles.cache.find(role => role.name === '🐧'));
         let profile = await profileModel.create({
             userID: member.id,
             serverID: member.guild.id,

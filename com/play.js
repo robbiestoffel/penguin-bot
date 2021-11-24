@@ -1,6 +1,7 @@
 const ytdl = require('ytdl-core');
 const ytSearch = require('yt-search');
 const pathToFfmpeg = require('ffmpeg-static');
+const { joinVoiceChannel, p } = require('@discordjs/voice');
 
 const queue = new Map();
 
@@ -11,9 +12,8 @@ module.exports = {
     permissions: ["CONNECT", "SPEAK"],
     description: 'Music Bot',
     async execute(message, args, cmd, client, Discord){
-
         const voice_channel = message.member.voice.channel;
-        if (!voice_channel) return message.channel.send('You need to be in a voice channel to execute this command!');
+        // if (!message.member.voice.channel) return message.channel.send('You need to be in a voice channel to execute this command!');
 
         const server_queue = queue.get(message.guild.id);
 
@@ -50,7 +50,11 @@ module.exports = {
                 queue_constructor.songs.push(song);
     
                 try {
-                    const connection = await voice_channel.join();
+                    const connection = await joinVoiceChannel({
+                        channelId: voice_channel.id,
+                        guildId: voice_channel.guild.id,
+                        adapterCreator: voice_channel.guild.voiceAdapterCreator,
+                    });
                     queue_constructor.connection = connection;
                     video_player(message.guild, queue_constructor.songs[0]);
                 } catch (err) {
@@ -78,19 +82,17 @@ const video_player = async (guild, song) => {
         return;
     }
     const stream = ytdl(song.url, { filter: 'audioonly' });
-    song_queue.connection.play(stream, { seek: 0, volume: 0.5 }).on('finish', () => {
+    song_queue.connection.joinVoiceChannel(stream, { seek: 0, volume: 0.5 }).on('finish', () => {
         song_queue.songs.shift();
         video_player(guild, song_queue.songs[0]);
     })
     await song_queue.text_channel.send(`Now playing **${song.title}**`)
 }
-
 const skip_song = (message, server_queue) => {
     if (!message.member.voice.channel) return message.channel.send('You need to be in a channel to execute this command!');
     if (!server_queue) return message.channel.send('There are no songs in queue');
     server_queue.connection.dispatcher.end();
 }
-
 const stop_song = (message, server_queue) => {
     if (!message.member.voice.channel) return message.channel.send('You need to be in a channel to execute this command!');
     server_queue.songs = [];

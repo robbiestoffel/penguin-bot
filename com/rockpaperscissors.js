@@ -10,11 +10,11 @@ module.exports = {
         const channel = await message.guild.channels.create(`choose rock, paper, or scissors here ${message.author.tag}`);
         channel.setParent('886569387203629106');
 
-        channel.updateOverwrite(message.guild.id, {
+        channel.permissionOverwrites.create(message.guild.id, {
             SEND_MESSAGES: false,
             VIEW_CHANNEL: false
         });
-        channel.updateOverwrite(message.author, {
+        channel.permissionOverwrites.create(message.author, {
             SEND_MESSAGES: false,
             VIEW_CHANNEL: true
         });
@@ -25,7 +25,7 @@ module.exports = {
             
             await reactionMessage.react(":rock:");
             await reactionMessage.react(":page_facing_up:");
-            await reactionMessage.react("scissors");
+            await reactionMessage.react(":scissors:");
         }catch(err){
             channel.send("There was an error finding the right emojis...")
             throw err;

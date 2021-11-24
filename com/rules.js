@@ -19,6 +19,6 @@ module.exports = {
             )
             .setFooter('Enjoy!');
 
-        message.channel.send(newEmbed);
+        message.channel.send({ embeds: [newEmbed] });
     }
 }

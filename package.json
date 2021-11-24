@@ -8,13 +8,15 @@
     "@discordjs/voice": "^0.6.0",
     "abort-controller": "^3.0.0",
     "asynckit": "^0.4.0",
+    "bufferutil": "^4.0.5",
     "combined-stream": "^1.0.8",
     "delayed-stream": "^1.0.0",
-    "discord.js": "^13.1.0",
+    "discord.js": "^13.2.0",
     "dotenv": "^10.0.0",
     "event-target-shim": "^5.0.1",
     "ffmpeg-static": "^4.4.0",
     "fs": "^0.0.1-security",
+    "libsodium-wrappers": "^0.7.9",
     "mime-db": "^1.46.0",
     "mime-types": "^2.1.29",
     "minecraft-server-util": "^3.5.2",
@@ -27,7 +29,8 @@
     "tweetnacl": "^1.0.3",
     "ws": "^7.4.4",
     "yt-search": "^2.10.0",
-    "ytdl-core": "^4.9.1"
+    "ytdl-core": "^4.9.1",
+    "zlib-sync": "^0.1.7"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -41,5 +44,8 @@
   "bugs": {
     "url": "https://github.com/robbiestoffel/penguin-bot/issues"
   },
-  "homepage": "https://github.com/robbiestoffel/penguin-bot#readme"
+  "homepage": "https://github.com/robbiestoffel/penguin-bot#readme",
+  "devDependencies": {
+    "typescript": "^4.4.3"
+  }
 }

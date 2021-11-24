@@ -6,8 +6,6 @@ module.exports = {
     name: 'messageCreate',
     once: false,
     async execute(Discord, client, message) {
-        console.log('MESSAGE.JS!');
-
         ranMessage(message);
 
         // Main Code
@@ -65,16 +63,16 @@ module.exports = {
             "MANAGE_NICKNAMES",
             "MANAGE_ROLES",
             "MANAGE_WEBHOOKS",
-            "MANAGE_EMOJIS",
+            "MANAGE_EMOJIS_AND_STICKERS",
         ]
 
-        if (command.permissions.length) {
+        if (command.permissions.length <= 1) {
             let invalidPerms = []
             for (const perm of command.permissions) {
                 if (!validPermissions.includes(perm)) {
                     return console.log(`Invalid Permissions ${perm}`);
                 }
-                if (!message.member.hasPermission(perm)) {
+                if (!message.member.permissions.has(perm)) {
                     invalidPerms.push(perm);
                     break;
                 }
@@ -108,7 +106,6 @@ module.exports = {
 
         // Execute
         try {
-            console.log('executing command');
             command.execute(message, args, cmd, client, Discord, profileData);
         } catch (err) {
             message.reply("There was an error trying to execute this command!");
